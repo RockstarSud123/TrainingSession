@@ -1,0 +1,9 @@
+.fa-twitter::before, .fa-facebook::before{
+    content: "\f099";
+}
+*, ::after, ::before{
+    box-sizing: border-box;
+}
+.fab{
+    font-family: Font Awesome 5 Brands;
+}
