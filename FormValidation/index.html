@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
    
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -12,200 +15,254 @@
     <title>Form Validation</title>
 </head>
 <body>
+
     <!-- Main Div Element -->
     <div>
-        <!-- Header -->
-        <div>
-            <header class="text-center">
-                <h2>
-                    Web Training Centre <br />
-                    <small>Tutorials, Exercises, Assignments</small>
-                </h2>
-            </header>
-        </div>
-
-        <!-- Heading -->
-        <div >
-            <!-- <pre> tag : Used for multiple lines of code and gives scrolling. -->
-            <p>
-                 <h4>Validate form fields using Javascript - the beginners way</h4>
-                 In this assignment you have to validate form fields using Javascript - the beginners way.<br /><br />
-                 All the fields are mandatory.
-
-            </p>
-        </div>
-
-        <!-- Form Section -->
-        <section class="panel panel-default">
-            <form action="" name="validationForm" method="post" autocomplete="off" onsubmit="return validate()" class="panel-body">
-                <p><strong>Personal details</strong></p>
-
-                <!-- Your Name -->
-                <div class="form-group">
-                    <!-- Input Statement -->
-                    Your Name
-                    <input type="text" name="yourName" class="form-control" id="yourName" placeholder="Enter Your Name" />
-                    
-                    <!-- Validation Statement -->
-                    <div id="urName" style="color:red;"></div>
-
-                </div>
-
-                <!-- Email -->
-                <div class="form-group">
-                    <!-- Input Statement -->
-                    Email
-                    <input type="text" name="EMail" id="EMail" class="form-control" placeholder="xyz@example.com" />
-                    
-                     <!-- Validation Statement -->
-                     <div id="email" style="color:red;"></div>
-                </div>
-
-                <!-- Gender -->
-                <div class="form-group">
-                    <!-- Input Statement -->
-                    Gender
-                    <div class="radio">
-                    <label>
-                        <input type="radio" name="container" id="container" value="option1">
-                        Male
-                    </label>
-                    </div>
+       
+        <!-- --------------------------------------------HEADER----------------------------------------------------- -->
+       
+        <header class="text-center">
+            <h2>
+                Web Training Centre <br />
+                <small>Tutorials, Exercises, Assignments</small>
+            </h2>
+        </header>
+       
+        <!-- --------------------------------------------HEADING---------------------------------------------------- -->
         
-                    <div class="radio">
-                    <label>
-                        <input type="radio" name="container" id="container" value="option2">
-                        Female
-                    </label>
+        <div class="info">
+            <span>Validate form fields using Javascript - the beginners way</span><br />
+
+            In this assignment you have to validate form fields using Javascript - the beginners way.<br /><br />
+            <p>All the fields are mandatory.</p>
+        </div>
+
+        <!-- --------------------------------------------FORM SECTION----------------------------------------------- -->
+
+        <div class="panel panel-default">
+            <section>
+                <form name="validationForm" method="POST" autocomplete="off" class="form-horizontal" onsubmit="return validate()">
+                
+                    <p><strong>Personal details</strong></p><br />
+                
+                    <!-- ---------------------------------------YOUR NAME & EMAIL----------------------------------- -->
+            
+                    <div class="form-group">
+                    
+                        <!-- Your Name -->
+                        <div class="col-md-6">
+                            
+                            <!-- Input Statement -->
+                            <label>Your Name</label>
+                            <input type="text" name="yourName" class="form-control" id="yourName" placeholder="Enter your Full Name" />
+                            
+                            <!-- Validation Statement -->
+                            <div id="urName" style="color:red;"></div>
+
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6">
+
+                            <!-- Input Statement -->
+                            <label>Email</label>
+                            <input type="text" name="EMail" class="form-control" id="EMail" placeholder="xyz@example.com" />
+                            
+                            <!-- Validation Statement -->
+                            <div id="email" style="color:red;"></div>
+
+                        </div>
+
                     </div>
 
-                    <!-- Validation Statement -->
-                    <div id="radioButton" style="color:red;"></div>
-
-
-                </div>
-
-
-                <!-- Date Of Birth -->
-                <div class="form-group">
-                   <!-- Input Statement -->
-                    Date of Birth
-                    <input type="text" name="dateOfBirth" class="form-control" id="dateOfBirth" value="mm/dd/yyyy" />
+                    <!-- -----------------------------------GENDER & DATE OF BIRTH--------------------------------- -->
                     
-                    <!-- Validation Statement -->
-                    <div id="dob" style="color:red;"></div>
-                
-                </div>
-
-                <!-- Mobile -->
-                <div class="form-group">
-                    <!-- Input Statement -->
-                    Mobile
-                    <input type="text" name="mno" class="form-control" id="mno" placeholder="Enter 10 digit mobile number" />
+                    <div class="form-group">
                     
-                    <!-- Validation Statement -->
-                    <div id="mn" style="color:red;"></div>
-                </div>
-
-                <!-- Address -->
-                <div class="form-group">
-                    <!-- Input Statement -->
-                    Address
-                    <textarea name="address" class="form-control" id="address" placeholder="Enter your address"></textarea> 
+                        <!-- Gender -->
+                        <div class="col-md-6">
                     
-                    <!-- Validation Statement -->
-                    <div id='adr' style="color:red;"></div>
-                </div>
+                            <!-- Input Statement -->
+                            <label>Gender</label>    
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="container" id="male" value="option1">Male
+                                </label>
+                                
+                                <label>
+                                    <input type="radio" name="container" id="female" value="option2">Female
+                                </label>
+                            </div>
 
-                <!-- City -->
-                <div class="form-group">
-                    <!-- Input Statement -->
-                    City
-                    <select class="form-control" id="city"> 
-                        <option disabled selected>Choose your city</option>
-                        <option>Berlin</option>
-                        <option>Hamburg</option>
-                        <option>Munich</option>
-                        <option>Frankfurt</option>
-                        <option>Cologne</option>
-                    </select>           
+                            <!-- Validation Statement -->
+                            <div id="radioButton" style="color:red;"></div>  
+
+                        </div>
+
+                        <!-- Date Of Birth -->
+                        <div class="col-md-6">
+                            
+                            <!-- Input Statement -->
+                            <label>Date of Birth</label>
+                            <input type="date" name="DateOfBirth" class="form-control" id="dateOfBirth" />
+                            
+                            <!-- Validation Statement -->
+                            <div id="dob" style="color:red;"></div>
+
+                        </div>
+                        
+                    </div>
+
+                    <!-- ---------------------------------MOBILE NUMBER & ADDRESS--------------------------------- -->
+
+                    <div class="form-group">
                     
-                    <!-- Validation Statement -->
-                    <div id="ct" style="alert:red;"></div>
-                </div>
+                        <!-- Mobile -->
+                        <div class="col-md-6">
 
-                <!-- Country -->
-                <div class="form-group">
-                    <!-- Input Statement -->
-                    Country
-                    <input type="text" name="country" class="form-control" id="country" />
+                            <!-- Input Statement -->
+                            <label>Mobile</label>
+                            <input type="text" name="mno" class="form-control" id="mobileNumber" placeholder="Enter 10 digit mobile number" />
+                            
+                            <!-- Validation Statement -->
+                            <div id="mobile" style="color:red;"></div>
+
+                        </div>
                     
-                    <!-- Validation Statement -->
-                    <div id="cntry" style="color:red;"></div>
-                </div>
+                        <!-- Address -->
+                        <div class="col-md-6">
 
-                <!-- Expertise -->                
-                <div class="form-group">
-                    <label>Expertise</label>
-                    <div>
-                        <!-- Input Statement -->
-                        <label class="checkbox-inline">
-                            <input type="checkbox" name="HTML" id="inlineCheckbox" value="option1"> HTML
+                            <!-- Input Statement -->
+                            <label>Address</label>
+                            <textarea name="address" class="form-control" id="address" placeholder="Enter your address"></textarea> 
+            
+                            <!-- Validation Statement -->
+                            <div id='adress' style="color:red;"></div>
+                            
+                        </div>
+
+                    </div>
+
+                    <!-- --------------------------------------CITY & COUNTRY------------------------------------- -->
+                    
+                    <div class="form-group">
+                    
+                        <!-- City -->
+                        <div class="col-md-6">
+                            
+                            <!-- Input Statement -->
+                            <label>City</label>
+                            <select class="form-control" id="city"> 
+                                <option disabled selected>Choose your city</option>
+                                <option>Berlin</option>
+                                <option>Hamburg</option>
+                                <option>Munich</option>
+                                <option>Frankfurt</option>
+                                <option>Cologne</option>
+                            </select>           
+                            
+                            <!-- Validation Statement -->
+                            <div id="citi" style="color:red;"></div>
+
+                        </div>
+
+                        <!-- Country -->
+                        <div class="col-md-6">
+
+                            <!-- Input Statement -->
+                            <label>Country</label>
+                            <input type="text" name="country" class="form-control" id="country" />
+                            
+                            <!-- Validation Statement -->
+                            <div id="cuntry" style="color:red;"></div>
+
+                        </div>
+
+                    </div>
+
+                    <!---------------------------------------EXPERTISE & GROUP------------------------------------- -->
+                                    
+                    <div class="form-group">
+                    
+                        <!-- Expertise -->  
+                        <div class="col-md-6">
+                    
+                            <!-- Input Statement -->
+                            <label>Expertise</label><br />
+
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="inlineCheckbox[]" value="option1"> HTML
                             </label>
 
                             <label class="checkbox-inline">
-                            <input type="checkbox" name="CSS" id="inlineCheckbox" value="option2"> CSS
+                                <input type="checkbox" name="inlineCheckbox[]" value="option2"> CSS
                             </label>
 
                             <label class="checkbox-inline">
-                            <input type="checkbox" name="Javascript" id="inlineCheckbox" value="option3"> Javascript
+                                <input type="checkbox" name="inlineCheckbox[]" value="option3"> Javascript
                             </label>
                             
                             <label class="checkbox-inline">
-                            <input type="checkbox" name="jQuery" id="inlineCheckbox" value="option4"> jQyery
+                                <input type="checkbox" name="inlineCheckbox[]" value="option4"> jQyery
                             </label>
-                        </label>
+                            
+                            
+                            <!-- Validation Statement -->
+                            <div id="expertise" style="color:red;"></div>
+
+                        </div>
+
+                        <!-- Group -->
+                        <div class="col-md-6">
+
+                            <!-- Input Statement -->
+                            <label>Group</label>
+                            <select multiple class="form-control" id="group">
+                                <option>Family</option>
+                                <option>Friend</option>
+                                <option>Co-worker</option>
+                                <option>Employee</option>
+                                <option>Neibhour</option>
+                                <option>Guardian</option>
+                            </select>   
+
+                            <!-- Validation Statement -->
+                            <div id="grup" style="color: red"></div>
+
+                        </div>
+
                     </div>
-
-                    <!-- Validation Statement -->
-                    <div id="expertise" style="color:red;"></div>
-                </div>
-
-                <!-- Group -->
-                <div class="form-group">
-                    <select multiple class="form-control">
-                        <option>Family</option>
-                        <option>Friend</option>
-                        <option>Co-worker</option>
-                        <option>Employee</option>
-                        <option>Neibhour</option>
-                        <option>Guardian</option>
-                    </select>
-                </div>
-            </form>
-        </section>
-
-        <!-- Button -->
-        <div class="form-group panel panel-default">
-            <div class="panel-body">
-                <input type="submit" class="btn btn-info" name="submit" value="Save" />
-            </div>
+        
+                    <!-- ------------------------------------------BUTTON------------------------------------------- -->
+        
+                    <div class="panel panel-default">
+                        <div class="panel-body button">
+                            <input type="submit" class="btn" name="submit" value="Save" />
+                        </div>
+                    </div>
+                    
+                </form>
+            </section>
         </div>
+
+      
+
+        <!-- --------------------------------------------ARTICLE--------------------------------------------------- -->
         
         <article>
-            <div class="form-group">
+            <div>
                 Hide the above form and show this div when the form has passed the validation.
             </div>
             
-            <div class="form-group border">
+            <div class="msg-box">
                 Congratulations!<br />
                 You have succesfully validated the form<br />
                 <a href="#">Show the form again</a>
             </div>
         </article>
+
     </div>
 
-    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
 
