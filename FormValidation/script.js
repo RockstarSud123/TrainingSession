@@ -1,204 +1,150 @@
 function validate(){
+    console.log(document.getElementById('group').selectedIndex);
+   
 
     // Your Name
-    yourName = document.getElementById('yourName').value;
+   var yourName = document.getElementById('yourName').value;
     if(yourName==""){
         document.getElementById('urName').innerHTML="* Please Enter your Full Name.";
-
-        document.getElementById('yourName').value="";
-        document.getElementById('yourName').focus();
         return false;
     }
-    if(!isNaN(yourName)){
+    else if(!isNaN(yourName)){
         document.getElementById('urName').innerHTML="Please enter only character.";
         return false;
     }
-    if((yourName.length<4)||(yourName.length>12)){
+    else if((yourName.length<4)||(yourName.length>12)){
         document.getElementById('urName').innerHTML="Characters must be in between 4 to 12.";
         return false;
-    } 
+    }
+    else{
+        document.getElementById('urName').innerHTML="";
+    }
+
 
     // EMail
-    if(((document.getElementById('EMail').value.indexOf('@')<0))||(document.getElementById('EMail').value.charAt(document.getElementById('EMail').value.length-4)!='.')&&(document.getElementById('EMail').value.charAt(document.getElementById('EMail').value.length-3)!='.')){
-        document.getElementById('email').innerHTML="Please enter valid EMail Address.";
+    var symbols = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    var EMail = document.getElementById('EMail').value;
+    if(EMail==""){
+        document.getElementById('email').innerHTML="Enter Email Address.";
         return false;
     }
+    else if(!EMail.match(symbols)){
+        document.getElementById('email').innerHTML="Please enter valid Email Address.";
+        return false;
+    }
+    else{
+        document.getElementById('email').innerHTML="";
+    }
+ 
 
     // // Gender (Radio Buttons)
-    // if(document.getElementById('container')[0].checked==false){
+    if((document.getElementById('male').checked==false) && (document.getElementById('female').checked==false)){
+        document.getElementById('radioButton').innerHTML="Please select your gender.";
+        return false;
+    }
+    else{
+        document.getElementById('radioButton').innerHTML="";
+    }
 
-    //     document.getElementById('radioButton').innerHTML="Select at least one.";
-    //     return false;
-    // }
 
     // // Date Of Birth
-    // dateOfBirth = document.getElementById('dateOfBirth').value;
+    symbols=/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
+    var dateOfBirth = document.getElementById('dateOfBirth').value;
+    console.log(dateOfBirth);
+    if(dateOfBirth==""){
+        document.getElementById('dob').innerHTML="Please enter your Date of Birth.";
+        return false;
+    }
+    else if(!dateOfBirth.match(symbols)){
+        document.getElementById('dob').innerHTML="Enter Date of Birth in proper format.";
+        return false;
+    }
+    else{
+        document.getElementById('dob').innerHTML="";
+    }
 
-    // if(dateOfBirth==""){
-    //     document.getElementById('dob').innerHTML="Please enter your Date of Birth.";
-    //     return false;
-    // }
 
     // Mobile No.
-    mno = document.getElementById('mno').value;
-    if(mno==""){
-        document.getElementById('mn').innerHTML="Please enter your contact number.";
+    var mobileNumber = document.getElementById('mobileNumber').value;
+    if(mobileNumber==""){
+        document.getElementById('mobile').innerHTML="Please enter your contact number.";
         return false;
     }
-    if(isNaN(mno)){
-        document.getElementById('mn').innerHTML="Enter only numeric value.";
+    else if(isNaN(mobileNumber)){
+        document.getElementById('mobile').innerHTML="Enter only numeric value.";
         return false;
     }
-    if(mno.length<10||mno.length>10){
-        document.getElementById('mn').innerHTML="Contaact number must be of 10 digits only.";
+    else if(mobileNumber.length<10||mobileNumber.length>10){
+        document.getElementById('mobile').innerHTML="Contact number must be of 10 digits.";
         return false;
     }
-    if((mno.charAt(0)!=9)&&(mno.charAt(0)!=8)&&(mno.charAt(0)!=7)){
-        document.getElementById('mn').innerHTML="Mobile number should always start with 9, 8 or 7.";
+    else if((mobileNumber.charAt(0)!=9)&&(mobileNumber.charAt(0)!=8)&&(mobileNumber.charAt(0)!=7)){
+        document.getElementById('mobile').innerHTML="Mobile number should always start with 9, 8 or 7.";
         return false;
     }
+    else{
+        document.getElementById('mobile').innerHTML="";
+    }
+
 
     // Address
-    address=document.getElementById('address').value;
+    var address=document.getElementById('address').value;
+    console.log(address.length);
     if(address==""){
-        document.getElementById('adr').innerHTML="Enter your address.";
+        document.getElementById('adress').innerHTML="Enter your address.";
+        return false;
+    }    
+    else if((address.length<20)||(address.length>100)){
+        document.getElementById('adress').innerHTML="Your textarea must be in between 20 to 100.";
         return false;
     }
-    if((address.length<20)||(address.length>100)){
-        document.getElementById('adr').innerHTML="Your textarea must be in between 20 to 100.";
-        return false;
+    else{
+        document.getElementById('adress').innerHTML="";
     }
 
+
     // City (<select> &  <option> element)
-    if(document.getElementById('city').selectedIndex==""){
-        document.getElementById('ct').innerHTML("Please select your city.");
+    console.log(document.getElementById('city').selectedIndex);
+    if(document.getElementById('city').selectedIndex == 0){
+        document.getElementById('citi').innerHTML="Please select your city.";
         return false;
+    }
+    else{
+        document.getElementById('citi').innerHTML="";
     }
     
 
     // Country
-    country=document.getElementById('country').value;
+    var country=document.getElementById('country').value;
     if(country==""){
-        document.getElementById('cntry').innerHTML="Please enter your country.";
+        document.getElementById('cuntry').innerHTML="Please enter your country.";
         return false;
     }
+    else{
+        document.getElementById('cuntry').innerHTML="";
+    }
+
 
     // Expertise
-    if(document.getElementById('inlineCheckbox').checked==false){
+    var checkBox = document.getElementsByName('inlineCheckbox[]');
+    if(!checkBox[0].checked && !checkBox[1].checked && !checkBox[2].checked && !checkBox[3].checked){
         document.getElementById('expertise').innerHTML="Please choose at least one expertise.";
         return false;
     }
     else{
-        return true;
+        document.getElementById('expertise').innerHTML="";
     }
 
+
     // Group (<select> &  <option> element)
+    var group=document.getElementById('group').selectedIndex;
+    
+    if(group == -1){
+        document.getElementById('grup').innerHTML="Please select any one group.";
+        return false;
+    }
+    else{
+        document.getElementById('grup').innerHTML="";
+    }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function empty(str){
-//     if(str==""){
-//         return true;
-//     }
-//     return false;
-// }
