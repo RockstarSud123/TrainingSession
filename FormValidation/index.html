@@ -54,7 +54,7 @@
                             
                             <!-- Input Statement -->
                             <label>Your Name</label>
-                            <input type="text" name="yourName" class="form-control" id="yourName" placeholder="Enter your Full Name" />
+                            <input type="text" name="yourName" class="form-control" id="yourName" oninput="validateName()" placeholder="Enter your Full Name" />
                             
                             <!-- Validation Statement -->
                             <div id="urName" style="color:red;"></div>
@@ -66,7 +66,7 @@
 
                             <!-- Input Statement -->
                             <label>Email</label>
-                            <input type="text" name="EMail" class="form-control" id="EMail" placeholder="xyz@example.com" />
+                            <input type="text" name="EMail" class="form-control" id="EMail" oninput="validateEMail()" placeholder="xyz@example.com" />
                             
                             <!-- Validation Statement -->
                             <div id="email" style="color:red;"></div>
@@ -80,7 +80,7 @@
                     <div class="form-group">
                     
                         <!-- Gender -->
-                        <div class="col-md-6">
+                        <div class="col-md-6" oninput="validateGender()">
                     
                             <!-- Input Statement -->
                             <label>Gender</label>    
@@ -104,7 +104,7 @@
                             
                             <!-- Input Statement -->
                             <label>Date of Birth</label>
-                            <input type="date" name="DateOfBirth" class="form-control" id="dateOfBirth" />
+                            <input type="date" name="DateOfBirth" class="form-control" id="dateOfBirth" oninput="validateDateOfBirth()" />
                             
                             <!-- Validation Statement -->
                             <div id="dob" style="color:red;"></div>
@@ -122,7 +122,7 @@
 
                             <!-- Input Statement -->
                             <label>Mobile</label>
-                            <input type="text" name="mno" class="form-control" id="mobileNumber" placeholder="Enter 10 digit mobile number" />
+                            <input type="text" name="mno" class="form-control" id="mobileNumber" oninput="validateMobileNo()" placeholder="Enter 10 digit mobile number" />
                             
                             <!-- Validation Statement -->
                             <div id="mobile" style="color:red;"></div>
@@ -134,7 +134,7 @@
 
                             <!-- Input Statement -->
                             <label>Address</label>
-                            <textarea name="address" class="form-control" id="address" placeholder="Enter your address"></textarea> 
+                            <textarea name="address" class="form-control" id="address" oninput="validateAddress()" placeholder="Enter your address"></textarea> 
             
                             <!-- Validation Statement -->
                             <div id='adress' style="color:red;"></div>
@@ -148,7 +148,7 @@
                     <div class="form-group">
                     
                         <!-- City -->
-                        <div class="col-md-6">
+                        <div class="col-md-6" oninput="validateCity()">
                             
                             <!-- Input Statement -->
                             <label>City</label>
@@ -167,7 +167,7 @@
                         </div>
 
                         <!-- Country -->
-                        <div class="col-md-6">
+                        <div class="col-md-6" oninput="validateCountry()">
 
                             <!-- Input Statement -->
                             <label>Country</label>
@@ -185,7 +185,7 @@
                     <div class="form-group">
                     
                         <!-- Expertise -->  
-                        <div class="col-md-6">
+                        <div class="col-md-6" oninput="validateExpertise()">
                     
                             <!-- Input Statement -->
                             <label>Expertise</label><br />
@@ -213,7 +213,7 @@
                         </div>
 
                         <!-- Group -->
-                        <div class="col-md-6">
+                        <div class="col-md-6" oninput="validateGroup()">
 
                             <!-- Input Statement -->
                             <label>Group</label>
