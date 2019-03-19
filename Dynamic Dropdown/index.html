@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <title>Dynamic Dropdown</title>
+
+</head>
+<body onload="setStates();">
+
+    <header>
+    <div class="flip-box">
+        <div class="flip-box-inner">
+        
+            <div class="flip-box-front">
+                <h2>Welcome OnBoard</h2>
+            </div>
+        
+            <div class="flip-box-back">
+                <h2>We are happy to see you</h2>
+            </div>  
+
+        </div>
+    </div>
+    </header>
+
+
+    <div class="form-group col-md-6">
+       
+        <label>State :</label>
+        <select class="form-control" name="state" id="state" onchange="copy(this);">
+            <option value="">Please select the State</option>
+        </select>
+
+        <div class="selectedState"> 
+                Selected State  : 
+                <div class="dropDown" id="dropdown"></div>
+        </div>
+        
+    </div>
+</body>
+</html>
