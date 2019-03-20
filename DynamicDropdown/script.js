@@ -7,8 +7,8 @@ var newValues=states['India'];
 
 function setStates() {
 
-    selectField = document.getElementById("state");
-    selectField.options.length = 1;
+    var selectField = document.getElementById("state");
+    selectField.options.length = 1; 
 
     for (var i=0; i<newOptions.length; i++) 
     {
@@ -18,7 +18,7 @@ function setStates() {
 
 function copy(event){
     
-    // console.log(event.value);
+    console.log(event.value);
 
     var x = document.getElementById('state').value;
     

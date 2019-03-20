@@ -1,21 +1,26 @@
-header{
-    background:  #f0f0f5;
+header, .h2, label, .selectedState{
+    font-size: 2.5rem;
+    font-weight: 10rem;
     padding: .5rem;
+}
+
+header{
+    background-color:  #f0f0f5;
     font-family: URW Chancery L, cursive;
-    /* font-weight: bolder; */
+}
+
+.flip-box, .flip-box-inner, .flip-box-front, .flip-box-back{
+    width: 130rem;
+    height: 10rem;
 }
 
 .flip-box {
     background-color: transparent;
-    width: 130rem;
-    height: 10rem;
     border: 1px solid #f1f1f1;
-    perspective: 1000px;
-  }
+}
+
 .flip-box-inner {
     position: relative;
-    width: 130rem;
-    height: 10rem;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
@@ -25,8 +30,6 @@ header{
 }
 .flip-box-front, .flip-box-back {
     position: absolute;
-    width: 130rem;
-    height: 10rem;
     backface-visibility: hidden;
 }
 .flip-box-front {
@@ -40,15 +43,12 @@ header{
     transform: rotateX(180deg);
 }
 
-header, .h2{
-    font-size: 1.5rem;
-    font-weight: 10rem;
+label, .selectedState{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 label{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:  #666699;
-    font-size: 2.5rem;
     text-shadow: 1px 1px #e0e0eb;
 }
 
@@ -56,16 +56,13 @@ label{
     color: red;
 }
 
+
 .selectedState{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 3rem;
-    padding: 2rem 0 2rem 0;
     float: left;
 }
 
 .dropDown{
     float: right;   
-    padding-left: 1rem;
     color:  #737373;    
 }
 
