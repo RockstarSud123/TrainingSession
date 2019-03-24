@@ -1,5 +1,4 @@
 function validate(){
-  
      if(validateName() && validateEMail() && validateGender() && validateDateOfBirth() && validateMobileNo() &&  validateAddress() && validateCity() && validateCountry() && validateExpertise() && validateGroup()){
         console.log("Validation successfully done.");
         return true;
