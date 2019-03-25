@@ -1,6 +1,4 @@
 function validate(){
-   
-    // console.log(document.getElementById('group').selectedIndex);
 
     console.log("1 " + validateName());
     console.log("2 " + validateEMail());
@@ -15,11 +13,9 @@ function validate(){
 
 
      if(validateName() && validateEMail() && validateGender() && validateDateOfBirth() && validateMobileNo() &&  validateAddress() && validateCity() && validateCountry() && validateExpertise() && validateGroup()){
-        console.log("Validation successfully done.");
         return true;
      }
      else{
-         console.log("Validation required");
          return false;
      }
 }
@@ -49,6 +45,7 @@ function validateName() {
 function validateEMail(){
     var symbols = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     var EMail = document.getElementById('EMail').value;
+   
     if(EMail==""){
         document.getElementById('email').innerHTML="Enter Email Address.";
         return false;
@@ -78,8 +75,6 @@ function validateDateOfBirth(){
     symbols=/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
     var dateOfBirth = document.getElementById('dateOfBirth').value;
    
-    console.log(dateOfBirth);
-   
     if(dateOfBirth==""){
         document.getElementById('dob').innerHTML="Please enter your Date of Birth.";
         return false;
@@ -96,6 +91,7 @@ function validateDateOfBirth(){
 
 function validateMobileNo(){
     var mobileNumber = document.getElementById('mobileNumber').value;
+    
     if(mobileNumber==""){
         document.getElementById('mobile').innerHTML="Please enter your contact number.";
         return false;
@@ -121,8 +117,6 @@ function validateMobileNo(){
 function validateAddress(){
     var address=document.getElementById('address').value;
     
-    console.log(address.length);
-    
     if(address==""){
         document.getElementById('adress').innerHTML="Enter your address.";
         return false;
@@ -138,7 +132,7 @@ function validateAddress(){
 }
 
 function validateCity(){
-    console.log(document.getElementById('city').selectedIndex);
+  
     if(document.getElementById('city').selectedIndex == 0){
         document.getElementById('citi').innerHTML="Please select your city.";
         return false;
@@ -151,6 +145,7 @@ function validateCity(){
 
 function validateCountry(){
     var country=document.getElementById('country').value;
+   
     if(country==""){
         document.getElementById('cuntry').innerHTML="Please enter your country.";
         return false;
@@ -163,6 +158,7 @@ function validateCountry(){
 
 function validateExpertise(){
     var checkBox = document.getElementsByName('inlineCheckbox[]');
+   
     if(!checkBox[0].checked && !checkBox[1].checked && !checkBox[2].checked && !checkBox[3].checked){
         document.getElementById('expertise').innerHTML="Please choose at least one expertise.";
         return false;
@@ -185,7 +181,3 @@ function validateGroup(){
          return true;
     }
 }
-
-// $('#submit-btn').click(function(){
-
-// })
