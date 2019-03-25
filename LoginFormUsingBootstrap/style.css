@@ -1,9 +1,7 @@
-.fa-twitter::before, .fa-facebook::before{
-    content: "\f099";
+form > container{
+    max-width: 50rem;
 }
-*, ::after, ::before{
-    box-sizing: border-box;
-}
+
 .fab{
     font-family: Font Awesome 5 Brands;
 }
