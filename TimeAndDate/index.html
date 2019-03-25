@@ -6,22 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Time & Date</title>
 
+    <link rel="stylesheet" href="style.css">
+  
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    <style>
-        .date-time{
-            text-align: center;
-            padding: 25rem; 
-            line-height: 12.5rem;
-            font-weight: 800;
-            font-size: 5rem;
-        }
-    </style>
-
 </head>
-<body onload = "timeFunction()">
+<body onload = "timeFunction();">
     
 
     <div class="date-time">
@@ -30,79 +22,7 @@
         <div id="time"></div>
     </div>
 
-        <script>
+    <script src="script.js"></script>
 
-            //      DATE
-
-            var date = new Date();
-            var year = date.getFullYear();
-            
-            var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            month = month[date.getMonth()];
-
-            var day = date.getDate();
-            var dday = day+10;
-
-            if(day==1 || day==21 || day==31){
-                day += "st".sup();
-                document.getElementById("date").innerHTML = day + " " + month + ", " + year;
-            }
-            else if(day==2 || day==22){
-                day += "nd".sup();
-                document.getElementById("date").innerHTML = day + " " + month + ", " + year;
-            }
-            else if(day==3 || day==23){
-                day += "rd".sup();
-                document.getElementById("date").innerHTML = day + " " + month + ", " + year;
-            }
-            else{
-                day += "th".sup();
-                document.getElementById("date").innerHTML = day + " " + month + ", " + year;
-            }
-
-
-            if(day<10){
-                day = "0" + day;
-                document.getElementById("date").innerHTML = day + " " + month + ", " + year;
-            }
-            else if(month<10){
-                month = "0" + month;
-                document.getElementById("date").innerHTML = day + " " + month + ", " + year;
-            }
-            else{
-                document.getElementById("date").innerHTML = day + " " + month + ", " + year;
-            }
-
-            //      TIME    
-
-        function timeFunction(){
-            
-            var time = new Date();
-            var hour = time.getHours();
-            var minute = time.getMinutes();
-            var second = time.getSeconds();
-
-            minute = checkTime(minute);
-            second = checkTime(second);
-            
-            var i;
-            function checkTime(i){
-                if(i<10){
-                    i = "0" + i;
-                }
-                return i;
-            }
-
-            if(hour > 12){
-                hour = hour-12;
-                hour = checkTime(hour);
-                document.getElementById("time").innerHTML = hour + ":" + minute + ":" + second + " " + "PM";                     
-            }
-            else{
-                document.getElementById("time").innerHTML = hour + ":" + minute + ":" + second + " " + "AM";
-            }
-            var var1 = setTimeout(timeFunction, 1000);
-        }
-    </script>
 </body>
 </html>
