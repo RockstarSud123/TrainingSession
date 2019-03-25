@@ -1,7 +1,3 @@
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-  
 function filterFunction() {
 
     var input = document.getElementById("myInput").value;
@@ -23,4 +19,3 @@ function filterFunction() {
     }
   
 }
-
