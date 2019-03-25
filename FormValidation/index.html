@@ -153,7 +153,7 @@
                             <!-- Input Statement -->
                             <label>City</label>
                             <select class="form-control" id="city"> 
-                                <option disabled selected>Choose your city</option>
+                                <option selected>Choose your city</option>
                                 <option>Berlin</option>
                                 <option>Hamburg</option>
                                 <option>Munich</option>
@@ -237,30 +237,14 @@
         
                     <div class="panel panel-default">
                         <div class="panel-body button">
-                            <input type="submit" class="btn" name="submit" value="Save" />
+                            <input type="submit" class="btn" name="submit" data-toggle="modal" data-target="#validModalPopUp" value="Save" />
                         </div>
                     </div>
-                    
+                                        
                 </form>
             </section>
         </div>
-
-      
-
-        <!-- --------------------------------------------ARTICLE--------------------------------------------------- -->
         
-        <article>
-            <div>
-                Hide the above form and show this div when the form has passed the validation.
-            </div>
-            
-            <div class="msg-box">
-                Congratulations!<br />
-                You have succesfully validated the form<br />
-                <a href="#">Show the form again</a>
-            </div>
-        </article>
-
     </div>
 
 </body>
