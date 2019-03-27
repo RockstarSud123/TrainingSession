@@ -1,0 +1,37 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  position: absolute;
+  background-color: #f6f6f6;
+  overflow: auto;
+}
+
+.dropdown-content li, .dropdown li:hover, .myInput{
+padding: 2rem;
+}
+
+.dropdown-content li, .myInput{
+font-size: 2rem;
+}
+
+.dropdown-content li {
+  color: black;
+}
+
+.dropdown li:hover {
+  background-color: black;
+  color: white;
+  font-size: 2.5rem;
+}
+
+ul{
+  padding: 0;
+}
+
+.myInput {
+border: none;
+border-bottom: .2rem solid black;
+}
