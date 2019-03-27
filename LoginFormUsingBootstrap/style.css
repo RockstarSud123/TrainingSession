@@ -2,6 +2,8 @@ form > container{
     max-width: 50rem;
 }
 
-.fab{
+.fa{
     font-family: Font Awesome 5 Brands;
+    padding: .8rem;
 }
+
