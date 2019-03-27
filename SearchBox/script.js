@@ -23,12 +23,9 @@ function filterFunction() {
             arr.sort();
 
             document.getElementById("stateList").innerHTML = "";
- 
-            console.log("Inside if");
-        }
+         }
         else if(arr=="")
         {
-            console.log("Inside else");
             document.getElementById("stateList").innerHTML = "No results found.";
             document.getElementById("stateList").style.color="red";
             document.getElementById("stateList").style.fontSize="2rem";
