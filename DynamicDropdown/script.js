@@ -17,8 +17,6 @@ function setStates() {
 }
 
 function copy(event){
-    
-    console.log(event.value);
 
     var x = document.getElementById('state').value;
     
