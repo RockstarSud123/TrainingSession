@@ -1,9 +1,22 @@
 function validate(){
 
+    validateName();
+    validateEMail();
+    validateGender();
+    validateDateOfBirth();
+    validateMobileNo();
+    validateAddress();
+    validateCity();
+    validateCountry();
+    validateExpertise();
+     validateGroup();
+
+
      if(validateName() && validateEMail() && validateGender() && validateDateOfBirth() && validateMobileNo() &&  validateAddress() && validateCity() && validateCountry() && validateExpertise() && validateGroup()){
         return true;
      }
      else{
+         console.log("Inside else.");
          return false;
      }
 }
