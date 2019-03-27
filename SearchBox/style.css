@@ -1,50 +1,37 @@
 .dropdown {
-    position: relative;
-    display: inline-block;
-  }
+  position: relative;
+  display: inline-block;
+}
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f6f6f6;
-    overflow: auto;
-    border: .1rem solid #ddd;
+  position: absolute;
+  background-color: #f6f6f6;
+  overflow: auto;
+}
+
+.dropdown-content li, .dropdown li:hover, .myInput{
+padding: 2rem;
+}
+
+.dropdown-content li, .myInput{
+font-size: 2rem;
 }
 
 .dropdown-content li {
-    color: black;
-    padding: 2rem;
-    font-size: 1.5rem;
-  }
-  
+  color: black;
+}
+
 .dropdown li:hover {
-    background-color: black;
-    color: white;
-    font-size: 2rem;
+  background-color: black;
+  color: white;
+  font-size: 2.5rem;
 }
 
 ul{
-    list-style-type:none;
-    padding: 0;
-}
-
-.dropbtn {
-  background-color: white;
-  color: black; 
-  border: 1px solid #008CBA;
-  padding: 2rem;
-  font-size: 1.7rem;
-  cursor: pointer; 
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #008CBA;
-  transition-duration: 0.5s;
+  padding: 0;
 }
 
 .myInput {
-  font-size: 2rem;
-  padding: 1rem 2rem 1rem;
-  border: none;
-  border-bottom: .2rem solid black;
+border: none;
+border-bottom: .2rem solid black;
 }
