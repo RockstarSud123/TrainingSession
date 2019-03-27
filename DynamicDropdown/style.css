@@ -1,0 +1,68 @@
+header, .h2, label, .selectedState{
+    font-size: 2.5rem;
+    font-weight: 10rem;
+    padding: .5rem;
+}
+
+header{
+    background-color:  #f0f0f5;
+    font-family: URW Chancery L, cursive;
+}
+
+.flip-box, .flip-box-inner, .flip-box-front, .flip-box-back{
+    width: 130rem;
+    height: 10rem;
+}
+
+.flip-box {
+    background-color: transparent;
+    border: 1px solid #f1f1f1;
+}
+
+.flip-box-inner {
+    position: relative;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}  
+.flip-box:hover .flip-box-inner {
+    transform: rotateX(180deg);
+}
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    backface-visibility: hidden;
+}
+.flip-box-front {
+    background-color: #bbb;
+    color: black;
+    
+}
+.flip-box-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateX(180deg);
+}
+
+label, .selectedState{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+label{
+    color:  #666699;
+    text-shadow: 1px 1px #e0e0eb;
+}
+
+.validStatement{
+    color: red;
+}
+
+
+.selectedState{
+    float: left;
+}
+
+.dropDown{
+    float: right;   
+    color:  #737373;    
+}
+
