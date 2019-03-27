@@ -1,17 +1,5 @@
 function validate(){
 
-    console.log("1 " + validateName());
-    console.log("2 " + validateEMail());
-    console.log("3 " + validateGender());
-    console.log("4 " + validateDateOfBirth());
-    console.log("5 " + validateMobileNo());
-    console.log("6 " + validateAddress());
-    console.log("7 " + validateCity());
-    console.log("8 " + validateCountry());
-    console.log("9 " + validateExpertise());
-    console.log("10 " + validateGroup());
-
-
      if(validateName() && validateEMail() && validateGender() && validateDateOfBirth() && validateMobileNo() &&  validateAddress() && validateCity() && validateCountry() && validateExpertise() && validateGroup()){
         return true;
      }
