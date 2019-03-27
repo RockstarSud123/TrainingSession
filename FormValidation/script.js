@@ -9,7 +9,7 @@ function validate(){
     validateCity();
     validateCountry();
     validateExpertise();
-     validateGroup();
+    validateGroup();
 
 
      if(validateName() && validateEMail() && validateGender() && validateDateOfBirth() && validateMobileNo() &&  validateAddress() && validateCity() && validateCountry() && validateExpertise() && validateGroup()){
