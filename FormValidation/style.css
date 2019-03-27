@@ -18,7 +18,8 @@ header > h2:hover{
     transition-duration: 80ms;
 }
 
-.info, form, .button, .msg-box{
+.info, form, .button
+{
     box-shadow: .5rem 1.9rem 2.5rem .8rem  #ebfaeb inset;
 
 }
@@ -38,10 +39,4 @@ div > span{
 .btn{
     background-color: #0040ff;
     width: 10rem;
-}
-
-.msg-box{
-    border: 1px solid green;
-    border-radius: .3rem;
-    padding: .5rem; 
 }
