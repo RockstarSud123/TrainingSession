@@ -16,7 +16,6 @@ header{
 
 .flip-box {
     background-color: transparent;
-    border: 1px solid #f1f1f1;
 }
 
 .flip-box-inner {
@@ -49,7 +48,7 @@ label, .selectedState{
 
 label{
     color:  #666699;
-    text-shadow: 1px 1px #e0e0eb;
+    text-shadow: .2rem .2rem #e0e0eb;
 }
 
 .validStatement{
