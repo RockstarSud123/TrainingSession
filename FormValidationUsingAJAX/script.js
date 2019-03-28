@@ -14,7 +14,31 @@ function validate(){
      if(validateName() && validateEMail() && validateGender() && validateDateOfBirth() && validateMobileNo() &&  validateAddress() && validateCity() && validateCountry() && validateExpertise() && validateGroup()){
 
         // AJAX Request after successfull form validation.
-        $('#validModalPopUp').modal('show');
+        $.ajax({
+            method: "POST",
+            url:"",
+            data:{
+                name: yourName,
+                email: EMail,
+                dateOfBirth: dateOfBirth,
+                number: mobileNumber,
+                address: address,
+                city: cities, 
+                country: country,
+                expertise: [
+                    html,
+                    css,
+                    js,
+                    jQuery
+                ],
+                group: groups
+            }
+        })
+        .done(function(){
+            $('#validModalPopUp').modal('show');
+        });
+
+        // $('#validModalPopUp').modal('show');
 
         return false;
      }
@@ -28,7 +52,8 @@ function validate(){
 
 function validateName() {
     var yourName = document.getElementById('yourName').value;
-    
+    console.log(yourName);
+
     if(yourName==""){
         document.getElementById('urName').innerHTML="* Please Enter your Full Name.";
         return false;
@@ -50,7 +75,8 @@ function validateName() {
 function validateEMail(){
     var symbols = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     var EMail = document.getElementById('EMail').value;
-   
+    console.log(EMail);
+
     if(EMail==""){
         document.getElementById('email').innerHTML="Enter Email Address.";
         return false;
@@ -66,6 +92,8 @@ function validateEMail(){
 }
 
 function validateGender(){
+    var gender = document.getElementById('male').value;
+    console.log(gender);
     if((document.getElementById('male').checked==false) && (document.getElementById('female').checked==false)){
         document.getElementById('radioButton').innerHTML="Please select your gender.";
         return false;
@@ -79,7 +107,7 @@ function validateGender(){
 function validateDateOfBirth(){
     symbols=/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
     var dateOfBirth = document.getElementById('dateOfBirth').value;
-   
+    console.log(dateOfBirth);
     if(dateOfBirth==""){
         document.getElementById('dob').innerHTML="Please enter your Date of Birth.";
         return false;
@@ -96,7 +124,7 @@ function validateDateOfBirth(){
 
 function validateMobileNo(){
     var mobileNumber = document.getElementById('mobileNumber').value;
-    
+    console.log(mobileNumber);
     if(mobileNumber==""){
         document.getElementById('mobile').innerHTML="Please enter your contact number.";
         return false;
@@ -121,7 +149,7 @@ function validateMobileNo(){
 
 function validateAddress(){
     var address=document.getElementById('address').value;
-    
+    console.log(address);
     if(address==""){
         document.getElementById('adress').innerHTML="Enter your address.";
         return false;
@@ -138,6 +166,9 @@ function validateAddress(){
 
 function validateCity(){
   
+    var cities = document.getElementById('city').value;
+    console.log(cities);
+
     if(document.getElementById('city').selectedIndex == 0){
         document.getElementById('citi').innerHTML="Please select your city.";
         return false;
@@ -150,7 +181,7 @@ function validateCity(){
 
 function validateCountry(){
     var country=document.getElementById('country').value;
-   
+    console.log(country);
     if(country==""){
         document.getElementById('cuntry').innerHTML="Please enter your country.";
         return false;
@@ -171,7 +202,17 @@ function validateCountry(){
 
 function validateExpertise(){
     var checkBox = document.getElementsByName('inlineCheckbox[]');
-   
+ 
+    var html = checkBox[0].checked;
+    var css = checkBox[1].checked;
+    var js = checkBox[2].checked;
+    var jQuery = checkBox[3].checked;
+
+    console.log(html);   
+    console.log(css);
+    console.log(js);
+    console.log(jQuery);
+
     if(!checkBox[0].checked && !checkBox[1].checked && !checkBox[2].checked && !checkBox[3].checked){
         document.getElementById('expertise').innerHTML="Please choose at least one expertise.";
         return false;
@@ -184,7 +225,9 @@ function validateExpertise(){
 
 function validateGroup(){
     var group=document.getElementById('group').selectedIndex;
-    
+    var groups=document.getElementById('group').value;
+    console.log(groups);
+
     if(group == -1){
         document.getElementById('grup').innerHTML="Please select any one group.";
         return false;
