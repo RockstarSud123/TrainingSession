@@ -9,8 +9,8 @@
     <script type="text/javascript" src="script.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <title>Form Validation</title>
 </head>
@@ -185,27 +185,26 @@
                     <div class="form-group">
                     
                         <!-- Expertise -->  
+                        
                         <div class="col-md-6" oninput="validateExpertise()">
-                    
                             <!-- Input Statement -->
                             <label>Expertise</label><br />
 
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="inlineCheckbox[]" value="option1"> HTML
+                                <input type="checkbox" name="inlineCheckbox[]" id="HTML" value="HTML"> HTML
                             </label>
 
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="inlineCheckbox[]" value="option2"> CSS
+                                <input type="checkbox" name="inlineCheckbox[]" id="CSS" value="CSS"> CSS
                             </label>
 
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="inlineCheckbox[]" value="option3"> Javascript
+                                <input type="checkbox" name="inlineCheckbox[]" id="Javascript" value="Javascript"> Javascript
                             </label>
                             
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="inlineCheckbox[]" value="option4"> jQyery
+                                <input type="checkbox" name="inlineCheckbox[]" id="jQuery" value="jQuery"> jQyery
                             </label>
-                            
                             
                             <!-- Validation Statement -->
                             <div class="validation-statement" id="expertise"></div>
