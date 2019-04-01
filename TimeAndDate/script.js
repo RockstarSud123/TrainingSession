@@ -5,6 +5,7 @@ var year = date.getFullYear();
 var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 month = month[date.getMonth()];
 var day = date.getDate();
+var dday = day+10;
 
 if(day==1 || day==21 || day==31){
 
@@ -36,6 +37,9 @@ function timeFunction(){
     var minute = time.getMinutes();
     var second = time.getSeconds();
 
+    minute = checkTime(minute);
+    second = checkTime(second);
+
     function checkTime(i){
         if(i<10){
             i = "0" + i;
@@ -46,6 +50,8 @@ function timeFunction(){
     if(hour > 12){
      
         hour = hour-12;
+        hour = checkTime(hour);
+
         document.getElementById("time").innerHTML = hour + ":" + minute + ":" + second + " " + "PM";                     
     }
     else{
