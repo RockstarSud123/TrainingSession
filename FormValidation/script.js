@@ -151,10 +151,18 @@ function validateCountry(){
         document.getElementById('cuntry').innerHTML="Please enter your country.";
         return false;
     }
+    else if(!isNaN(country)){
+        document.getElementById('cuntry').innerHTML="Please enter only character.";
+        return false;
+    }
+    else if((country.length<4)||(country.length>12)){
+        document.getElementById('cuntry').innerHTML="Characters must be in between 4 to 12.";
+        return false;
+    }
     else{
         document.getElementById('cuntry').innerHTML="";
          return true;
-    }
+    }  
 }
 
 function validateExpertise(){
