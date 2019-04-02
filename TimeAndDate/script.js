@@ -7,25 +7,27 @@ month = month[date.getMonth()];
 var day = date.getDate();
 var dday = day+10;
 
+var domDate = document.getElementById("date");
+
 if(day==1 || day==21 || day==31){
 
     day += "st".sup();
-    document.getElementById("date").innerHTML = day + " " + month + ", " + year;
+    domDate.innerHTML = day + " " + month + ", " + year;
 }
 else if(day==2 || day==22){
 
     day += "nd".sup();
-    document.getElementById("date").innerHTML = day + " " + month + ", " + year;
+    domDate.innerHTML = day + " " + month + ", " + year;
 }
 else if(day==3 || day==23){
 
     day += "rd".sup();
-    document.getElementById("date").innerHTML = day + " " + month + ", " + year;
+    domDate.innerHTML = day + " " + month + ", " + year;
 }
 else{
 
     day += "th".sup();
-    document.getElementById("date").innerHTML = day + " " + month + ", " + year;
+    domDate.innerHTML = day + " " + month + ", " + year;
 }
 
 //      TIME    
@@ -47,16 +49,18 @@ function timeFunction(){
         return i;
     }
 
+    var domTime = document.getElementById("time");
+
     if(hour > 12){
      
         hour = hour-12;
         hour = checkTime(hour);
 
-        document.getElementById("time").innerHTML = hour + ":" + minute + ":" + second + " " + "PM";                     
+        domTime.innerHTML = hour + ":" + minute + ":" + second + " " + "PM";                     
     }
     else{
     
-        document.getElementById("time").innerHTML = hour + ":" + minute + ":" + second + " " + "AM";
+        domTime.innerHTML = hour + ":" + minute + ":" + second + " " + "AM";
     }
     var variable = setTimeout(timeFunction, 1000);
 }
