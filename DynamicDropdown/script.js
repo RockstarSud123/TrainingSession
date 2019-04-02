@@ -1,9 +1,6 @@
-    var states = new Array();
+var states = ['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu and Kashmir','Jharkhand','Karnataka','Kerala','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','WestBengal','Andaman and Nicobar Islands','Chandigarh','Dadra and Nagar Haveli','Daman and Diu','Lakshadweep','Puducherry']; 
 
-states['India'] = new Array('Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chhattisgarh','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu and Kashmir','Jharkhand','Karnataka','Kerala','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttar Pradesh','Uttarakhand','WestBengal','Andaman and Nicobar Islands','Chandigarh','Dadra and Nagar Haveli','Daman and Diu','Lakshadweep','Puducherry'); 
-
-var newOptions=states['India'];
-var newValues=states['India'];
+var newOptions=states;
 
 function setStates() {
 
@@ -18,15 +15,15 @@ function setStates() {
 
 function copy(event){
 
-    var x = document.getElementById('state').value;
-    
-    if(x==""){
-      document.getElementById('dropdown').innerHTML = "Please select the State";
-      document.getElementById('dropdown').style.color = 'red';
+    var state = document.getElementById('state').value;
+    var dropdown = document.getElementById('dropdown');
+    if(state==""){
+      dropdown.innerHTML = "Please select the State";
+      dropdown.style.color = 'red';
       return false;
     }
     else{
-      document.getElementById('dropdown').innerHTML = states['India'][document.getElementById('state').value-1];
-      document.getElementById('dropdown').style.color = '';
+      dropdown.innerHTML = states[state-1];
+      dropdown.style.color = '';
     }
 }
