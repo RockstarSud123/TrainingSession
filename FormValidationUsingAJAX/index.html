@@ -9,8 +9,8 @@
     <script type="text/javascript" src="script.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <title>Form Validation</title>
 </head>
@@ -19,7 +19,7 @@
     <!-- Main Div Element -->
     <div>
        
-        <!-- --------------------------------------------HEADER----------------------------------------------------- -->
+        <!-- ----HEADER---- -->
        
         <header class="text-center">
             <h2>
@@ -28,7 +28,7 @@
             </h2>
         </header>
        
-        <!-- --------------------------------------------HEADING---------------------------------------------------- -->
+        <!-- ----HEADING---- -->
         
         <div class="info">
             <span>Validate form fields using Javascript - the beginners way</span><br />
@@ -37,15 +37,15 @@
             <p>All the fields are mandatory.</p>
         </div>
 
-        <!-- --------------------------------------------FORM SECTION----------------------------------------------- -->
+        <!-- ----FORM SECTION---- -->
 
         <div class="panel panel-default">
             <section>
-                <form name="validationForm" method="POST" autocomplete="off" class="form-horizontal" id="form" onsubmit="return validate()">
+                <form name="validationForm" method="POST" autocomplete="off" class="form-horizontal" onsubmit="return validate()">
                 
                     <p><strong>Personal details</strong></p><br />
                 
-                    <!-- ---------------------------------------YOUR NAME & EMAIL----------------------------------- -->
+                    <!-- ----YOUR NAME & EMAIL---- -->
             
                     <div class="form-group">
                     
@@ -53,11 +53,11 @@
                         <div class="col-md-6">
                             
                             <!-- Input Statement -->
-                            <label>Your Name</label>
-                            <input type="text" name="yourName" class="form-control" id="yourName" oninput="validateName()" placeholder="Enter your Full Name" />
+                            <label>Full Name</label>
+                            <input type="text" name="fullName" class="form-control" id="fullName" oninput="validateName()" placeholder="Please enter your Full Name" />
                             
                             <!-- Validation Statement -->
-                            <div class="validation-statement" id="urName"></div>
+                            <div class="error-msg" id="errorName"></div>
 
                         </div>
 
@@ -66,36 +66,36 @@
 
                             <!-- Input Statement -->
                             <label>Email</label>
-                            <input type="text" name="EMail" class="form-control" id="EMail" oninput="validateEMail()" placeholder="xyz@example.com" />
+                            <input type="text" name="Email" class="form-control" id="Email" oninput="validateEmail()" placeholder="xyz@example.com" />
                             
                             <!-- Validation Statement -->
-                            <div class="validation-statement" id="email"></div>
+                            <div class="error-msg" id="errorEmail"></div>
 
                         </div>
 
                     </div>
 
-                    <!-- -----------------------------------GENDER & DATE OF BIRTH--------------------------------- -->
+                    <!-- ----GENDER & DATE OF BIRTH---- -->
                     
                     <div class="form-group">
                     
                         <!-- Gender -->
-                        <div class="col-md-6" oninput="validateGender()">
+                        <div class="col-md-6" onchange="validateGender()">
                     
                             <!-- Input Statement -->
                             <label>Gender</label>    
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="container" id="male" value="option1">Male
+                                    <input type="radio" name="container" id="male" value="male">Male
                                 </label>
                                 
                                 <label>
-                                    <input type="radio" name="container" id="female" value="option2">Female
+                                    <input type="radio" name="container" id="female" value="female">Female
                                 </label>
                             </div>
 
                             <!-- Validation Statement -->
-                            <div class="validation-statement" id="radioButton"></div>  
+                            <div class="error-msg" id="errorRadioButton"></div>  
 
                         </div>
 
@@ -104,16 +104,16 @@
                             
                             <!-- Input Statement -->
                             <label>Date of Birth</label>
-                            <input type="date" name="DateOfBirth" class="form-control" id="dateOfBirth" oninput="validateDateOfBirth()" />
+                            <input type="date" name="DateOfBirth" class="form-control" id="dateOfBirth" oninput="validateDOB()" />
                             
                             <!-- Validation Statement -->
-                            <div class="validation-statement" id="dob"></div>
+                            <div class="error-msg" id="errorDOB"></div>
 
                         </div>
                         
                     </div>
 
-                    <!-- ---------------------------------MOBILE NUMBER & ADDRESS--------------------------------- -->
+                    <!-- ----MOBILE NUMBER & ADDRESS---- -->
 
                     <div class="form-group">
                     
@@ -122,10 +122,10 @@
 
                             <!-- Input Statement -->
                             <label>Mobile</label>
-                            <input type="text" name="mno" class="form-control" id="mobileNumber" oninput="validateMobileNo()" placeholder="Enter 10 digit mobile number" />
+                            <input type="text" name="mobileNumber" class="form-control" id="mobileNumber" oninput="validateMobileNo()" placeholder="Enter 10 digit mobile number" />
                             
                             <!-- Validation Statement -->
-                            <div class="validation-statement" id="mobile"></div>
+                            <div class="error-msg" id="errorMobileNumber"></div>
 
                         </div>
                     
@@ -137,32 +137,32 @@
                             <textarea name="address" class="form-control" id="address" oninput="validateAddress()" placeholder="Enter your address"></textarea> 
             
                             <!-- Validation Statement -->
-                            <div class="validation-statement" id='adress'></div>
+                            <div class="error-msg" id='errorAdress'></div>
                             
                         </div>
 
                     </div>
 
-                    <!-- --------------------------------------CITY & COUNTRY------------------------------------- -->
+                    <!-- -------CITY & COUNTRY------ -->
                     
                     <div class="form-group">
                     
                         <!-- City -->
-                        <div class="col-md-6" oninput="validateCity()">
+                        <div class="col-md-6" onchange="validateCity()">
                             
                             <!-- Input Statement -->
                             <label>City</label>
                             <select class="form-control" id="city"> 
                                 <option selected>Choose your city</option>
-                                <option>Berlin</option>
-                                <option>Hamburg</option>
-                                <option>Munich</option>
-                                <option>Frankfurt</option>
-                                <option>Cologne</option>
+                                <option value = "Berlin">Berlin</option>
+                                <option value = "Hamburg">Hamburg</option>
+                                <option value = "Munich">Munich</option>
+                                <option value = "Frankfurt">Frankfurt</option>
+                                <option value = "Cologne">Cologne</option>
                             </select>           
                             
                             <!-- Validation Statement -->
-                            <div class="validation-statement" id="citi"></div>
+                            <div class="error-msg" id="errorCity"></div>
 
                         </div>
 
@@ -171,68 +171,69 @@
 
                             <!-- Input Statement -->
                             <label>Country</label>
-                            <input type="text" name="country" class="form-control" id="country" />
+                            <input type="text" name="country" class="form-control" id="country" placeholder="Entery your country"/>
                             
                             <!-- Validation Statement -->
-                            <div class="validation-statement" id="cuntry"></div>
+                            <div class="error-msg" id="errorCountry"></div>
 
                         </div>
 
                     </div>
 
-                    <!---------------------------------------EXPERTISE & GROUP------------------------------------- -->
+                    <!---- EXPERTISE & GROUP---- -->
                                     
                     <div class="form-group">
                     
                         <!-- Expertise -->  
-                        
-                        <div class="col-md-6" oninput="validateExpertise()">
+                        <div class="col-md-6" onchange="validateExpertise()">
+                    
                             <!-- Input Statement -->
                             <label>Expertise</label><br />
 
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="inlineCheckbox[]" id="HTML" value="HTML"> HTML
+                                <input type="checkbox" name="inlineCheckbox" value="html"> HTML
                             </label>
 
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="inlineCheckbox[]" id="CSS" value="CSS"> CSS
+                                <input type="checkbox" name="inlineCheckbox" value="css"> CSS
                             </label>
 
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="inlineCheckbox[]" id="Javascript" value="Javascript"> Javascript
+                                <input type="checkbox" name="inlineCheckbox" value="javascript"> Javascript
                             </label>
                             
                             <label class="checkbox-inline">
-                                <input type="checkbox" name="inlineCheckbox[]" id="jQuery" value="jQuery"> jQyery
+                                <input type="checkbox" name="inlineCheckbox" value="jQuery"> jQyery
                             </label>
+                            
                             
                             <!-- Validation Statement -->
-                            <div class="validation-statement" id="expertise"></div>
+                            <div class="error-msg" id="errorExpertise"></div>
 
                         </div>
 
                         <!-- Group -->
-                        <div class="col-md-6" oninput="validateGroup()">
+                        <div class="col-md-6" onchange="validateGroup()">
 
                             <!-- Input Statement -->
                             <label>Group</label>
                             <select multiple class="form-control" id="group">
-                                <option>Family</option>
-                                <option>Friend</option>
-                                <option>Co-worker</option>
-                                <option>Employee</option>
-                                <option>Neibhour</option>
-                                <option>Guardian</option>
+                                <option value = "Family">Family</option>
+                                <option value = "Friend">Friend</option>
+                                <option value = "Co-worker">Co-worker</option>
+                                <option value = "Employee">Employee</option>
+                                <option value = "Neibhour">Neibhour</option>
+                                <option value = "Guardian">Guardian</option>
                             </select>   
 
                             <!-- Validation Statement -->
-                            <div class="validation-statement" id="grup"></div>
+                            <div class="error-msg" id="errorGroup"></div>
 
                         </div>
 
                     </div>
         
-                    <!-- ------------------------------------------BUTTON------------------------------------------- -->
+                    <!-- -----BUTTON---- -->
         
                     <div class="panel panel-default">
                         <div class="panel-body button">
@@ -265,7 +266,8 @@
 
                             </div>
                         </div>
-                    </div>                 
+                    </div>           
+                    
                 </form>
             </section>
         </div>
@@ -274,3 +276,7 @@
 
 </body>
 </html>
+
+
+
+
