@@ -3,7 +3,7 @@ function validate(){
     var validName = validateName(), validEmail = validateEmail(), validGender = validateGender(), validDOB = validateDOB(), validNumber = validateMobileNo(), validAddress = validateAddress(), validCity = validateCity(), validCountry = validateCountry(), validExpertise = validateExpertise(), validGroup =  validateGroup();
 
 
-     if(validName && validEmail && validGender && validDOB && validNumber &&  validAddress && validCity && validCountry && validExpertise && validGroup()){
+     if(validName && validEmail && validGender && validDOB && validNumber &&  validAddress && validCity && validCountry && validExpertise && validGroup){
         return true;
      }
      else{
@@ -11,7 +11,6 @@ function validate(){
          return false;
      }
 }
-
 
 function validateName() {
     var fullName = document.getElementById('fullName').value;
