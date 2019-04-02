@@ -2,7 +2,6 @@ function validate(){
 
     var validName = validateName(), validEmail = validateEmail(), validGender = validateGender(), validDOB = validateDOB(), validNumber = validateMobileNo(), validAddress = validateAddress(), validCity = validateCity(), validCountry = validateCountry(), validExpertise = validateExpertise(), validGroup =  validateGroup();
 
-
      if(validName && validEmail && validGender && validDOB && validNumber &&  validAddress && validCity && validCountry && validExpertise && validGroup){
         // AJAX Request after successfull form validation.
         $.ajax({
@@ -37,7 +36,6 @@ function validate(){
          return false;
      }
 }
-
 
 function validateName() {
     var fullName = document.getElementById('fullName').value;
