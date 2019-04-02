@@ -1,14 +1,14 @@
 $(document).ready(function(){
     $.getJSON("table_data.json", function(data){
-        var books_info = '';
+        var books_data = '';
         $.each(data, function(key, value){
-            books_info += '<tr>';
-            books_info += '<td>' + value.bookID + '</td>';
-            books_info += '<td>' + value.bookName + '</td>';
-            books_info += '<td>' + value.category + '</td>';
-            books_info += '<td>' + value.price + '</td>';
-            books_info += '</tr>';
+            books_data += '<tr>';
+            books_data += '<td>' + value.bookID + '</td>';
+            books_data += '<td>' + value.bookName + '</td>';
+            books_data += '<td>' + value.category + '</td>';
+            books_data += '<td>' + value.price + '</td>';
+            books_data += '</tr>';
         });
-        $('.books-info').append(books_info);
+        $('.books-info').append(books_data);
     });
 });
