@@ -1,11 +1,11 @@
 //      DATE
 
-var date = new Date();
-var year = date.getFullYear();
-var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-month = month[date.getMonth()];
-var day = date.getDate();
-var dday = day+10;
+var date = new Date(),
+    year = date.getFullYear(),
+    month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    month = month[date.getMonth()],
+    day = date.getDate(),
+    dday = day+10;
 
 var domDate = document.getElementById("date");
 
@@ -35,9 +35,9 @@ else{
 function timeFunction(){
 
     var time = new Date();
-    var hour = time.getHours();
-    var minute = time.getMinutes();
-    var second = time.getSeconds();
+        hour = time.getHours();
+        minute = time.getMinutes();
+        second = time.getSeconds();
 
     minute = checkTime(minute);
     second = checkTime(second);
