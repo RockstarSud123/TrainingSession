@@ -22,6 +22,11 @@ header > h2:hover{
     color: red;
 }
 
+span{
+    font-size: 2rem;
+    margin-right: 75rem;
+}
+
 .info, form, .button{
     box-shadow: .5rem 1.9rem 2.5rem .8rem  #ebfaeb inset;
 
@@ -31,15 +36,16 @@ header > h2:hover{
     border-radius: .4rem; 
 }
 
-div > span{
-    font-size: 2rem;
+.info p{
+    margin-top: 1rem;
+}
+
+form p{
+    margin-top: 1rem;
 }
 
 .btn{
     color: white;
-}
-
-.btn{
     background-color: #0040ff;
     width: 10rem;
 }
