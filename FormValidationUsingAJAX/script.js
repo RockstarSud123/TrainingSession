@@ -1,5 +1,4 @@
 function validate(){
-
     var validName = validateName(), validEmail = validateEmail(), validGender = validateGender(), validDOB = validateDOB(), validNumber = validateMobileNo(), validAddress = validateAddress(), validCity = validateCity(), validCountry = validateCountry(), validExpertise = validateExpertise(), validGroup =  validateGroup();
 
      if(validName && validEmail && validGender && validDOB && validNumber &&  validAddress && validCity && validCountry && validExpertise && validGroup){
@@ -80,7 +79,6 @@ function validateEmail(){
 }
 
 function validateGender(){
-
     var domMale = document.getElementById('male').checked, 
         domFemale = document.getElementById('female').checked, 
         domGender = document.getElementById('errorRadioButton');
@@ -159,8 +157,6 @@ function validateAddress(){
 }
 
 function validateCity(){
-  
-
     var city = document.getElementById('city').selectedIndex, 
         domCity = document.getElementById('errorCity');
 
