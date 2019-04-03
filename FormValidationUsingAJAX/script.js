@@ -6,7 +6,7 @@ function validate(){
         // Note: We can't use reserved keyword as a property name.
         $.ajax({
             method: "POST",
-            url:"",
+            url:"https://reqres.in/api/users",
             data:{
                 name: fullName,
                 email: Email,
@@ -15,13 +15,13 @@ function validate(){
                 address: address,
                 city: city, 
                 country: country,
-                expertise: [
-                    html,
-                    css,
-                    js,
-                    jQuery
-                ],
-                group: groups
+                expertise: {
+                    html: htmlCheckBox,
+                    css: cssCheckBox,
+                    js: jsCheckBox,
+                    jQuery: jQueryCheckBox
+                },
+                group: "groups"
             }
         })
         .done(function(){
@@ -195,9 +195,7 @@ function validateCountry(){
 function validateExpertise(){
     var checkBox = document.getElementsByName('inlineCheckbox'), 
         domExpertise = document.getElementById('errorExpertise'), 
-        html = checkBox[0].checked, css = checkBox[1].checked, js = checkBox[2].checked, jQuery = checkBox[3].checked;
-
-    console.log(html); console.log(css); console.log(js); console.log(jQuery);
+        htmlCheckBox = checkBox[0].checked, cssCheckBox = checkBox[1].checked, jsCheckBox = checkBox[2].checked, jQueryCheckBox = checkBox[3].checked;
 
     if(!checkBox[0].checked && !checkBox[1].checked && !checkBox[2].checked && !checkBox[3].checked){
         domExpertise.innerHTML="Please choose at least one expertise.";
