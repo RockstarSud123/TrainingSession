@@ -4,16 +4,17 @@ function validate(){
 
      if(validName && validEmail && validGender && validDOB && validNumber &&  validAddress && validCity && validCountry && validExpertise && validGroup){
         // AJAX Request after successfull form validation.
+        // Note: We can't use reserved keyword as a property name.
         $.ajax({
             method: "POST",
             url:"",
             data:{
-                name: yourName,
-                email: EMail,
+                name: fullName,
+                email: Email,
                 dateOfBirth: dateOfBirth,
                 number: mobileNumber,
                 address: address,
-                city: cities, 
+                city: city, 
                 country: country,
                 expertise: [
                     html,
@@ -38,8 +39,8 @@ function validate(){
 }
 
 function validateName() {
-    var fullName = document.getElementById('fullName').value;
-    var domName = document.getElementById('errorName');
+    var fullName = document.getElementById('fullName').value, 
+        domName = document.getElementById('errorName');
     
     if(fullName==""){
         domName.innerHTML="* Please Enter your Full Name.";
@@ -60,9 +61,9 @@ function validateName() {
 }
 
 function validateEmail(){
-    var symbols = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-    var Email = document.getElementById('Email').value;
-    var domEmail = document.getElementById('errorEmail');
+    var symbols = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/, 
+        Email = document.getElementById('Email').value, 
+        domEmail = document.getElementById('errorEmail');
 
     if(Email==""){
         domEmail.innerHTML="Enter Email Address.";
@@ -80,9 +81,9 @@ function validateEmail(){
 
 function validateGender(){
 
-    var domMale = document.getElementById('male').checked;
-    var domFemale = document.getElementById('female').checked;
-    var domGender = document.getElementById('errorRadioButton');
+    var domMale = document.getElementById('male').checked, 
+        domFemale = document.getElementById('female').checked, 
+        domGender = document.getElementById('errorRadioButton');
     
     if((domMale==false) && (domFemale==false)){
         domGender.innerHTML="Please select your gender.";
@@ -96,8 +97,8 @@ function validateGender(){
 
 function validateDOB(){
     symbols=/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
-    var dateOfBirth = document.getElementById('dateOfBirth').value;
-    var domDOB = document.getElementById('errorDOB'); 
+    var dateOfBirth = document.getElementById('dateOfBirth').value, 
+        domDOB = document.getElementById('errorDOB'); 
 
     if(dateOfBirth==""){
         domDOB.innerHTML="Please enter your Date of Birth.";
@@ -114,8 +115,8 @@ function validateDOB(){
 }
 
 function validateMobileNo(){
-    var mobileNumber = document.getElementById('mobileNumber').value;
-    var domNumber = document.getElementById('errorMobileNumber');
+    var mobileNumber = document.getElementById('mobileNumber').value,
+        domNumber = document.getElementById('errorMobileNumber');
 
     if(mobileNumber==""){
         domNumber.innerHTML="Please enter your contact number.";
@@ -140,8 +141,8 @@ function validateMobileNo(){
 }
 
 function validateAddress(){
-    var address=document.getElementById('address').value;
-    var domAddress = document.getElementById('errorAdress');
+    var address=document.getElementById('address').value,
+        domAddress = document.getElementById('errorAdress');
 
     if(address==""){
         domAddress.innerHTML="Enter your address.";
@@ -160,8 +161,8 @@ function validateAddress(){
 function validateCity(){
   
 
-    var city = document.getElementById('city').selectedIndex;
-    var domCity = document.getElementById('errorCity');
+    var city = document.getElementById('city').selectedIndex, 
+        domCity = document.getElementById('errorCity');
 
     if(city == 0){
         domCity.innerHTML="Please select your city.";
@@ -174,8 +175,8 @@ function validateCity(){
 }
 
 function validateCountry(){
-    var country=document.getElementById('country').value;
-    var domCountry = document.getElementById('errorCountry');
+    var country=document.getElementById('country').value, 
+        domCountry = document.getElementById('errorCountry');
 
     if(country==""){
         domCountry.innerHTML="Please enter your country.";
@@ -196,8 +197,11 @@ function validateCountry(){
 }
 
 function validateExpertise(){
-    var checkBox = document.getElementsByName('inlineCheckbox');
-    var domExpertise = document.getElementById('errorExpertise');
+    var checkBox = document.getElementsByName('inlineCheckbox'), 
+        domExpertise = document.getElementById('errorExpertise'), 
+        html = checkBox[0].checked, css = checkBox[1].checked, js = checkBox[2].checked, jQuery = checkBox[3].checked;
+
+    console.log(html); console.log(css); console.log(js); console.log(jQuery);
 
     if(!checkBox[0].checked && !checkBox[1].checked && !checkBox[2].checked && !checkBox[3].checked){
         domExpertise.innerHTML="Please choose at least one expertise.";
@@ -210,8 +214,8 @@ function validateExpertise(){
 }
 
 function validateGroup(){
-    var group=document.getElementById('group').selectedIndex;
-    var domGroup = document.getElementById('errorGroup');
+    var group=document.getElementById('group').selectedIndex, 
+        domGroup = document.getElementById('errorGroup');
 
     if(group == -1){
         domGroup.innerHTML="Please select any one group.";
