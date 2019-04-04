@@ -1,13 +1,13 @@
-const tbody = document.querySelector(".books-store > tbody"); 
+var tbody = document.querySelector(".books-store > tbody"); 
 
 function loadData(){
-    const xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest();
 
     xhttp.open("GET", "table_data.json", true);
      
     xhttp.onload = () => {
         try{
-            const json = JSON.parse(xhttp.responseText);
+            var json = JSON.parse(xhttp.responseText);
 
             populateTable(json);
         }
@@ -22,10 +22,10 @@ function loadData(){
 function populateTable(json){
     
     json.forEach((row) => {
-        const tr = document.createElement("tr");
+        var tr = document.createElement("tr");
         
         row.forEach((cell) => {
-            const td = document.createElement("td");
+            var td = document.createElement("td");
             td.textContent = cell;
             tr.appendChild(td);
         });
