@@ -1,4 +1,4 @@
-const body = document.querySelector(".books-store > tbody"); 
+const tbody = document.querySelector(".books-store > tbody"); 
 
 function loadData(){
     const xhttp = new XMLHttpRequest();
@@ -30,7 +30,7 @@ function populateTable(json){
             tr.appendChild(td);
         });
 
-        body.append(tr);
+        tbody.append(tr);
     }); 
 }
 
