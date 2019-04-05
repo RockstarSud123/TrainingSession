@@ -1,10 +1,13 @@
 $(document).ready(function() {
 
     // we have added varibale which will be used for DOM/jQuery events.
-    var table = $('.books-store').DataTable({
+    var table = $('.books-store').DataTable( {
 
         // Parsing JSON data to HTML table using AJAX request.
         ajax: 'table_data.json',
+
+        //Deferred rendering for speed
+        deferRender: true,
         
         // Hides the particular column defined.
         columnDefs: [
@@ -17,14 +20,33 @@ $(document).ready(function() {
             }
         ],
 
-        // Alternative Pagination: Adds 'First', 'Previous', 'Next' and 'Last' buttons, plus page numbers to your page.
-        "pagingType": "full_numbers"
+        // Alternative Pagination
+        pagingType: "full_numbers",
+
+        // Using API in callbacks : Displays only selected row.
+        initComplete: function() {
+            var api = this.api();
+            api.$('td').click(function() {
+                api.search(this.innerHTML).draw();
+            });
+        }
     });
 
-    // DOM/jQueryEvent : Gives an alert when clicked on particular row.
+    // DOM/jQueryEvent : 
     $('.books-store tbody').on('click', 'tr', function() {
 
-        var data = table.row(this).data();  // retrieves info. about selected row.
-        alert("You are on " + data[0] + "'s row.");
+        // Row selection and deletion (single row)
+        if($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+        }
+        else{
+            table.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    });
+    
+    //  Button for single row deletion on selection.
+    $('.button').click(function() {
+        table.row('.selected').remove().draw(false);
     });
 });
