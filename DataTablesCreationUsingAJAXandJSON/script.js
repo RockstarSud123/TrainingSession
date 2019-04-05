@@ -20,8 +20,6 @@ $(document).ready(function() {
 
         // Alternative Pagination: Adds 'First', 'Previous', 'Next' and 'Last' buttons, plus page numbers to your page.
         "pagingType": "full_numbers"
-
-
     });
 
     // DOM/jQueryEvent : Gives an alert when clicked on particular row.
@@ -30,6 +28,4 @@ $(document).ready(function() {
         var data = table.row(this).data();  // retrieves info. about selected row.
         alert("You are on " + data[0] + "'s row.");
     });
-
-
 });
