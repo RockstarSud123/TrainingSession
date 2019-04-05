@@ -1,8 +1,7 @@
 $(document).ready(function() {
 
     // we have added varibale which will be used for DOM/jQuery events.
-    var table = 
-    $('.books-store').DataTable({
+    var table = $('.books-store').DataTable({
 
         // Parsing JSON data to HTML table using AJAX request.
         ajax: 'table_data.json',
