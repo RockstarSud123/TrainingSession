@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <title>Form Validation</title>
+</head>
+<body>
+
+    <!-- Main Div Element -->
+    <div>
+       
+        <!-- ----HEADER---- -->
+       
+        <header class="text-center">
+            <h2>
+                Web Training Centre <br />
+                <small>Tutorials, Exercises, Assignments</small>
+            </h2>
+        </header>
+       
+        <!-- ----HEADING---- -->
+        
+        <div class="info">
+            <span>Validate form fields using Javascript - the beginners way</span>
+
+            In this assignment you have to validate form fields using Javascript - the beginners way.
+            <p>All the fields are mandatory.</p>
+        </div>
+
+        <!-- ----FORM SECTION---- -->
+
+        <div class="panel panel-default">
+            <section>
+                <form name="validationForm" method="POST" autocomplete="off" class="form-horizontal" onsubmit="return validate();">
+                
+                    <p><strong>Personal details</strong></p>
+                
+                    <!-- ----FULL NAME & EMAIL---- -->
+            
+                    <div class="form-group">
+                    
+                        <!-- Full Name -->
+                        <div class="col-md-6">
+                            
+                            <!-- Input Statement -->
+                            <label>Full Name</label>
+                            <input type="text" name="fullName" class="form-control" id="fullName" oninput="validateName();" placeholder="Please enter your Full Name" />
+                            
+                            <!-- Validation Statement -->
+                            <div class="error-msg" id="errorName"></div>
+
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6">
+
+                            <!-- Input Statement -->
+                            <label>Email</label>
+                            <input type="text" name="Email" class="form-control" id="Email" oninput="validateEmail();" placeholder="xyz@example.com" />
+                            
+                            <!-- Validation Statement -->
+                            <div class="error-msg" id="errorEmail"></div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ----GENDER & DATE OF BIRTH---- -->
+                    
+                    <div class="form-group">
+                    
+                        <!-- Gender -->
+                        <div class="col-md-6" onchange="validateGender();">
+                    
+                            <!-- Input Statement -->
+                            <label>Gender</label>    
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="container" id="male" value="male">Male
+                                </label>
+                                
+                                <label>
+                                    <input type="radio" name="container" id="female" value="female">Female
+                                </label>
+                            </div>
+
+                            <!-- Validation Statement -->
+                            <div class="error-msg" id="errorRadioButton"></div>  
+
+                        </div>
+
+                        <!-- Date Of Birth -->
+                        <div class="col-md-6">
+                            
+                            <!-- Input Statement -->
+                            <label>Date of Birth</label>
+                            <input type="date" name="DateOfBirth" class="form-control" id="dateOfBirth" oninput="validateDOB();" />
+                            
+                            <!-- Validation Statement -->
+                            <div class="error-msg" id="errorDOB"></div>
+
+                        </div>
+                        
+                    </div>
+
+                    <!-- ----MOBILE NUMBER & ADDRESS---- -->
+
+                    <div class="form-group">
+                    
+                        <!-- Mobile -->
+                        <div class="col-md-6">
+
+                            <!-- Input Statement -->
+                            <label>Mobile</label>
+                            <input type="text" name="mobileNumber" class="form-control" id="mobileNumber" oninput="validateMobileNo();" placeholder="Enter 10 digit mobile number" />
+                            
+                            <!-- Validation Statement -->
+                            <div class="error-msg" id="errorMobileNumber"></div>
+
+                        </div>
+                    
+                        <!-- Address -->
+                        <div class="col-md-6">
+
+                            <!-- Input Statement -->
+                            <label>Address</label>
+                            <textarea name="address" class="form-control" id="address" oninput="validateAddress();" placeholder="Enter your address"></textarea> 
+            
+                            <!-- Validation Statement -->
+                            <div class="error-msg" id='errorAdress'></div>
+                            
+                        </div>
+
+                    </div>
+
+                    <!-- -------CITY & COUNTRY------ -->
+                    
+                    <div class="form-group">
+                    
+                        <!-- City -->
+                        <div class="col-md-6" onchange="validateCity();">
+                            
+                            <!-- Input Statement -->
+                            <label>City</label>
+                            <select class="form-control" id="city"> 
+                                <option selected>Choose your city</option>
+                                <option value = "Berlin">Berlin</option>
+                                <option value = "Hamburg">Hamburg</option>
+                                <option value = "Munich">Munich</option>
+                                <option value = "Frankfurt">Frankfurt</option>
+                                <option value = "Cologne">Cologne</option>
+                            </select>           
+                            
+                            <!-- Validation Statement -->
+                            <div class="error-msg" id="errorCity"></div>
+
+                        </div>
+
+                        <!-- Country -->
+                        <div class="col-md-6" oninput="validateCountry();">
+
+                            <!-- Input Statement -->
+                            <label>Country</label>
+                            <input type="text" name="country" class="form-control" id="country" placeholder="Entery your country"/>
+                            
+                            <!-- Validation Statement -->
+                            <div class="error-msg" id="errorCountry"></div>
+
+                        </div>
+
+                    </div>
+
+                    <!---- EXPERTISE & GROUP---- -->
+                                    
+                    <div class="form-group">
+                    
+                        <!-- Expertise -->  
+                        <div class="col-md-6" onchange="validateExpertise();">
+                    
+                            <!-- Input Statement -->
+                            <label>Expertise</label><br />
+
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="inlineCheckbox" value="html"> HTML
+                            </label>
+
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="inlineCheckbox" value="css"> CSS
+                            </label>
+
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="inlineCheckbox" value="javascript"> Javascript
+                            </label>
+                            
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="inlineCheckbox" value="jQuery"> jQyery
+                            </label>
+                            
+                            
+                            <!-- Validation Statement -->
+                            <div class="error-msg" id="errorExpertise"></div>
+
+                        </div>
+
+                        <!-- Group -->
+                        <div class="col-md-6" onchange="validateGroup();">
+
+                            <!-- Input Statement -->
+                            <label>Group</label>
+                            <select multiple class="form-control" id="group">
+                                <option value = "Family">Family</option>
+                                <option value = "Friend">Friend</option>
+                                <option value = "Co-worker">Co-worker</option>
+                                <option value = "Employee">Employee</option>
+                                <option value = "Neibhour">Neibhour</option>
+                                <option value = "Guardian">Guardian</option>
+                            </select>   
+
+                            <!-- Validation Statement -->
+                            <div class="error-msg" id="errorGroup"></div>
+
+                        </div>
+
+                    </div>
+        
+                    <!-- -----BUTTON---- -->
+        
+                    <div class="panel panel-default">
+                        <div class="panel-body button">
+                            <input type="submit" class="btn" name="submit" value="Save" />
+                        </div>
+                    </div>
+                    
+                </form>
+            </section>
+        </div>
+        
+    </div>
+
+</body>
+</html>
+
+
+
+
